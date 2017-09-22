@@ -1,12 +1,5 @@
 <template>
   <div>
-    <banner
-      :title="playlist.name"
-      :tracks="playlist.tracks.data.length"
-      :duration="playlist.duration"
-      :profile-url="playlist.playlist_url"
-      :playlist-url="playlist.owner_profile_url"
-    ></banner>
     <track-element :key="track.id" v-for="track in playlist.tracks.data" :track="track"></track-element>
   </div>
 </template>

@@ -5,3 +5,7 @@ export const getPlaylists = (state) => {
 export const getPage = (state) => {
   return state.page
 }
+
+export const getLoader = (state) => {
+  return state.loading
+}

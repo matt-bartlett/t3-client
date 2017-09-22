@@ -2,28 +2,29 @@
   <div>
     <header class="banner">
       <div>
-        <h1 class="banner-title">{{ title }}</h1>
-        <div class="banner-details" v-if="duration && tracks">
-          <h3 class="banner-span"><span class="glyphicon glyphicon-time" aria-hidden="true"></span>&nbsp;&nbsp;{{ duration }} Minutes</h3>
-          <h3 class="banner-span"><span class="glyphicon glyphicon-music" aria-hidden="true"></span>&nbsp;&nbsp;{{ tracks }} Tracks</h3>
+        <h1 class="banner-title">{{ details.title }}</h1>
+        <div class="banner-details" v-if="details.duration && details.tracks">
+          <h3 class="banner-span"><span class="glyphicon glyphicon-time" aria-hidden="true"></span>&nbsp;&nbsp;{{ details.duration }} Minutes</h3>
+          <h3 class="banner-span"><span class="glyphicon glyphicon-music" aria-hidden="true"></span>&nbsp;&nbsp;{{ details.tracks }} Tracks</h3>
         </div>
-        <router-link v-if="duration && tracks" class="btn btn-default" to="/">Go back</router-link>
-        <a v-if="duration && tracks" class="btn btn-danger" :href="playlistUrl" target="_blank">Go To Playlist</a>
-        <a v-if="duration && tracks" class="btn btn-danger" :href="profileUrl" target="_blank">Go To Creator</a>
+        <router-link v-if="details.duration && details.tracks" class="btn btn-default" to="/">Go back</router-link>
+        <a v-if="details.duration && details.tracks" class="btn btn-danger" :href="details.playlistUrl" target="_blank">Go To Playlist</a>
+        <a v-if="details.duration && details.tracks" class="btn btn-danger" :href="details.profileUrl" target="_blank">Go To Creator</a>
       </div>
     </header>
   </div>
 </template>
 
 <script>
+  import { mapGetters } from 'vuex'
+
   export default {
-    props: [
-      'title',
-      'duration',
-      'tracks',
-      'playlistUrl',
-      'profileUrl'
-    ]
+    name: 'banner',
+    computed: {
+      ...mapGetters({
+        details: 'banner/getBannerDetails'
+      })
+    }
   }
 </script>
 
