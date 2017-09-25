@@ -16,24 +16,20 @@
 
 <style>
   #preloader {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 9999;
-    background-color: #FFFFFF;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -o-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -o-justify-content: center;
+    justify-content: center;
   }
-
-  #loader {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 70px;
-    margin-left: -35px;
-    margin-top: -35px;
-  }
-
   #loader > div {
     width: 18px;
     height: 18px;
