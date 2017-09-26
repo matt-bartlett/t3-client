@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container" v-if="playlist">
     <track-element :key="track.id" v-for="track in playlist.tracks.data" :track="track"></track-element>
   </div>
 </template>

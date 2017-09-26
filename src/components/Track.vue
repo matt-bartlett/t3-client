@@ -5,7 +5,7 @@
         <div class="spotify-track-thumbnail">
           <img :src="track.spotify_thumbnail_url">
         </div>
-        <div class="spotify-track-information pull-left">
+        <div class="spotify-track-information details pull-left">
           <h5 class="track-title">{{ track.title }}</h5>
           <p class="track-artist">{{ track.artist }} - <span>{{ track.album }}</span></p>
         </div>
@@ -56,5 +56,10 @@
   .spotify-track-information .track-duration {
     font-size: 12px;
     font-weight: 300;
+  }
+  @media screen and (max-width: 480px) {
+    .spotify-track-information.details {
+      width: 65%;
+    }
   }
 </style>

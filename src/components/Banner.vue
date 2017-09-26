@@ -83,4 +83,21 @@
     border-color: #fff;
     background-color: transparent;
   }
+  @media screen and (max-width: 767px) {
+    .banner .banner-title {
+      font-size: 2.5em;
+    }
+    .banner .btn {
+      width: 50%;
+      margin-bottom: 5px;
+    }
+    .banner .btn:last-child {
+      margin-bottom: 0;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .banner .banner-title {
+      font-size: 1.8em;
+    }
+  }
 </style>
