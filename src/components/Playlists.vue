@@ -1,15 +1,9 @@
 <template>
-  <div class="container loading-height">
+  <div class="container">
     <playlist :key="playlist.id" v-for="playlist in playlists" :playlist="playlist"></playlist>
     <a href="#" v-if="page.hasMore()" @click.prevent="getMorePlaylists">Load more playlists</a>
   </div>
 </template>
-
-<style>
-  .loading-height {
-    min-height: 100px;
-  }
-</style>
 
 <script>
   import { mapActions, mapGetters } from 'vuex'

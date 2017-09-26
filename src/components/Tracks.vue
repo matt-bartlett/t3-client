@@ -1,14 +1,8 @@
 <template>
-  <div class="container loading-height">
+  <div class="container">
     <track-element :key="track.id" v-for="track in playlist.tracks.data" :track="track"></track-element>
   </div>
 </template>
-
-<style>
-  .loading-height {
-    min-height: 100px;
-  }
-</style>
 
 <script>
   import { mapActions, mapGetters } from 'vuex'

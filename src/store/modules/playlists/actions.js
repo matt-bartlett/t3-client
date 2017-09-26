@@ -1,7 +1,6 @@
 import axios from 'axios'
 
 export const getPlaylists = ({ commit }, page = 1) => {
-  commit('loader/setLoadingStatus', true, { root: true })
   return axios.get(`${process.env.API_URL}/playlists?page=${page}`)
     .then((response) => {
       commit('setPlaylists', response.data.data)
@@ -10,7 +9,6 @@ export const getPlaylists = ({ commit }, page = 1) => {
         max: response.data.meta.pagination.total_pages
       })
       commit('banner/setBannerWithTitle', null, { root: true })
-      commit('loader/setLoadingStatus', false, { root: true })
     })
     .catch((response) => {
       console.log(response)
