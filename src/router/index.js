@@ -21,5 +21,8 @@ export default new Router({
       path: '*',
       redirect: '/'
     }
-  ]
+  ],
+  scrollBehavior (to, from) {
+    return { x: 0, y: 0 }
+  }
 })
