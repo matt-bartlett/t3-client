@@ -1,3 +1,5 @@
 export default {
-  playlist: null
+  tracks: [],
+  playlist: null,
+  hasUserSearched: false
 }

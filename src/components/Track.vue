@@ -1,17 +1,15 @@
 <template>
   <div>
-    <div class="col-md-6 col-md-offset-3 col-sm-12">
-      <div class="spotify-track clearfix">
-        <div class="spotify-track-thumbnail">
-          <img :src="track.spotify_thumbnail_url">
-        </div>
-        <div class="spotify-track-information details pull-left">
-          <h5 class="track-title">{{ track.title }}</h5>
-          <p class="track-artist">{{ track.artist }} - <span>{{ track.album }}</span></p>
-        </div>
-        <div class="spotify-track-information pull-right">
-          <p class="track-duration">{{ track.duration_formatted }}</p>
-        </div>
+    <div class="spotify-track clearfix">
+      <div class="spotify-track-thumbnail">
+        <img :src="track.spotify_thumbnail_url">
+      </div>
+      <div class="spotify-track-information details pull-left">
+        <h5 class="track-title">{{ track.title }}</h5>
+        <p class="track-artist">{{ track.artist }} - <span>{{ track.album }}</span></p>
+      </div>
+      <div class="spotify-track-information pull-right">
+        <p class="track-duration">{{ track.duration_formatted }}</p>
       </div>
     </div>
   </div>

@@ -7,9 +7,6 @@
           <h3 class="banner-span"><span class="glyphicon glyphicon-time" aria-hidden="true"></span>&nbsp;&nbsp;{{ details.duration }} Minutes</h3>
           <h3 class="banner-span"><span class="glyphicon glyphicon-music" aria-hidden="true"></span>&nbsp;&nbsp;{{ details.tracks }} Tracks</h3>
         </div>
-        <router-link v-if="details.duration && details.tracks" class="btn btn-default" to="/">Go back</router-link>
-        <a v-if="details.duration && details.tracks" class="btn btn-danger" :href="details.playlistUrl" target="_blank">Go To Playlist</a>
-        <a v-if="details.duration && details.tracks" class="btn btn-danger" :href="details.profileUrl" target="_blank">Go To Creator</a>
       </div>
     </header>
   </div>
@@ -52,6 +49,7 @@
   .banner .banner-title {
     color: #f9f9f9;
     font-size: 3em;
+    margin-bottom: 0;
     text-transform: uppercase;
   }
   .banner .banner-details {

@@ -7,3 +7,10 @@ export const getPlaylist = ({ commit }, id) => {
       commit('banner/setBannerWithPlaylistDetails', response.data.data, { root: true })
     })
 }
+
+export const searchForTracks = ({ commit }, searchTerm) => {
+  return axios.get(`${process.env.API_URL}/search?q=${searchTerm}`)
+    .then((response) => {
+      commit('setTracks', response.data.data)
+    })
+}
