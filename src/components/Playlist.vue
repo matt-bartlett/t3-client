@@ -61,7 +61,7 @@
     -webkit-justify-content: center;
     -moz-justify-content: center;
     -o-justify-content: center;
-    background: rgba(39,71,110,0.8);
+    background: rgba(0,0,0,0.75);
     position: absolute;
     height: 100%;
     width: 100%;

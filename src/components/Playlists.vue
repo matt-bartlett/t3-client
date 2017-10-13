@@ -1,7 +1,7 @@
 <template>
   <div class="container text-center">
     <playlist :key="playlist.id" v-for="playlist in playlists" :playlist="playlist"></playlist>
-    <a href="#" v-if="page.hasMore()" @click.prevent="getMorePlaylists">Load more playlists</a>
+    <a class="anchor" v-if="page.hasMore()" @click.prevent="getMorePlaylists">Load more playlists</a>
   </div>
 </template>
 
@@ -31,3 +31,9 @@
     }
   }
 </script>
+
+<style>
+  .anchor {
+    padding: 10px 20px;
+  }
+</style>

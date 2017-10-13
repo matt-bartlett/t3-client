@@ -4,5 +4,8 @@ export const setPlaylist = (state, playlist) => {
 
 export const setTracks = (state, tracks) => {
   state.tracks = tracks
-  state.hasUserSearched = true
+}
+
+export const setHasUserSearched = (state, searched) => {
+  state.hasUserSearched = searched
 }

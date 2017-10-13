@@ -34,4 +34,14 @@
   #app {
     margin-bottom: 3em;
   }
+  .anchor {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    color: #000;
+  }
+  .anchor:hover,
+  .anchor:focus {
+    text-decoration: none;
+  }
 </style>

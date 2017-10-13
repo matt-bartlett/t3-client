@@ -8,7 +8,7 @@ export const getPlaylists = ({ commit }, page = 1) => {
         current: page,
         max: response.data.meta.pagination.total_pages
       })
-      commit('banner/setBannerWithTitle', null, { root: true })
+      commit('banner/setDefaultBanner', null, { root: true })
     })
     .catch((response) => {
       console.log(response)

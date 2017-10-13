@@ -18,7 +18,7 @@ npm run build
 npm run build --report
 ```
 ## Todos
-- [ ] - API call error catching
+- [ ] - Implement pre-rendering for images
 - [ ] - Play track previews
-- [ ] - Responsivity (mobile, tablets, etc)
-- [ ] - Simplify Vuex structure - While current structure is good for a larger application, its overkill for this
+- [ ] - Simplify Vuex structure
+- [ ] - Vuex Actions/Mutations can be tidier

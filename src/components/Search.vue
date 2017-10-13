@@ -3,7 +3,7 @@
     <div class="col-md-8 col-md-offset-2 col-sm-12">
       <div class="form-group" id="searchbar">
         <input @keyup.enter="searchForTracks(term)"
-          placeholder="Search for a track"
+          placeholder="Search"
           v-model="term"
           class="form-control"
           type="text"
@@ -16,7 +16,7 @@
       <div v-if="tracks.length > 0">
         <track-element v-for="track in tracks" :key="track.id" :track="track"></track-element>
       </div>
-      <p v-else-if="!hasUserSearched" class="search-notice text-center">Enter an Artist, Album or Track name to search.</p>
+      <p v-else-if="!hasUserSearched" class="search-notice text-center">Search for an Artist, Album or Track.</p>
       <p v-else class="search-notice text-center">Whoops, no results found.</p>
     </div>
   </div>
@@ -44,8 +44,12 @@
     },
     methods: {
       ...mapActions({
-        searchForTracks: 'tracks/searchForTracks'
+        searchForTracks: 'tracks/searchForTracks',
+        setBanner: 'tracks/setBanner'
       })
+    },
+    mounted () {
+      this.setBanner()
     }
   }
 </script>
