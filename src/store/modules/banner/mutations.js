@@ -7,5 +7,5 @@ export const setDefaultBanner = (state) => {
 export const setBannerTrack = (state, playlist) => {
   state.title = playlist.name
   state.duration = playlist.duration
-  state.tracks = 12
+  state.tracks = playlist.tracks.data.length
 }
