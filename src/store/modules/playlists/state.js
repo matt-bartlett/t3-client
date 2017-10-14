@@ -1,10 +1,10 @@
 export default {
+  playlists: [],
   page: {
-    current: 1,
     max: null,
+    current: 1,
     hasMore () {
       return this.current < this.max
     }
-  },
-  playlists: []
+  }
 }

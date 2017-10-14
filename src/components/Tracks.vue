@@ -19,7 +19,7 @@
     },
     computed: {
       ...mapGetters({
-        playlist: 'tracks/getPlaylist'
+        playlist: 'tracks/playlist'
       })
     },
     methods: {

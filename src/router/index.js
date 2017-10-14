@@ -19,7 +19,7 @@ export default new Router({
       component: Tracks
     },
     {
-      path: '/search/',
+      path: '/search',
       name: 'Search',
       component: Search
     },
@@ -27,8 +27,5 @@ export default new Router({
       path: '*',
       redirect: '/'
     }
-  ],
-  scrollBehavior (to, from) {
-    return { x: 0, y: 0 }
-  }
+  ]
 })

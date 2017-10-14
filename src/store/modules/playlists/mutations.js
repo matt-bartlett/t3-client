@@ -2,7 +2,7 @@ export const setPlaylists = (state, playlists) => {
   state.playlists = playlists
 }
 
-export const appendToPlaylists = (state, playlists) => {
+export const appendPlaylists = (state, playlists) => {
   state.playlists.push(...playlists)
 }
 

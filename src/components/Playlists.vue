@@ -16,8 +16,8 @@
     },
     computed: {
       ...mapGetters({
-        playlists: 'playlists/getPlaylists',
-        page: 'playlists/getPage'
+        page: 'playlists/page',
+        playlists: 'playlists/playlists'
       })
     },
     methods: {

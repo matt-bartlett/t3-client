@@ -2,10 +2,10 @@
   <div>
     <header class="banner">
       <div>
-        <h1 class="banner-title">{{ details.title }}</h1>
-        <div class="banner-details" v-if="details.duration && details.tracks">
-          <h3 class="banner-span"><span class="glyphicon glyphicon-time" aria-hidden="true"></span>&nbsp;&nbsp;{{ details.duration }} Minutes</h3>
-          <h3 class="banner-span"><span class="glyphicon glyphicon-music" aria-hidden="true"></span>&nbsp;&nbsp;{{ details.tracks }} Tracks</h3>
+        <h1 class="banner-title">{{ data.title }}</h1>
+        <div class="banner-details" v-if="data.duration && data.tracks">
+          <h3 class="banner-span"><span class="glyphicon glyphicon-time" aria-hidden="true"></span>&nbsp;&nbsp;{{ data.duration }} Minutes</h3>
+          <h3 class="banner-span"><span class="glyphicon glyphicon-music" aria-hidden="true"></span>&nbsp;&nbsp;{{ data.tracks }} Tracks</h3>
         </div>
       </div>
     </header>
@@ -19,7 +19,7 @@
     name: 'banner',
     computed: {
       ...mapGetters({
-        details: 'banner/getBannerDetails'
+        data: 'banner/banner'
       })
     }
   }
@@ -64,33 +64,9 @@
     margin: 22px 15px;
     text-transform: uppercase;
   }
-  .banner .btn {
-    -webkit-transition: all 200ms ease-out;
-    -moz-transition: all 200ms ease-out;
-    -o-transition: all 200ms ease-out;
-    transition: all 200ms ease-out;
-    text-transform: uppercase;
-  }
-  .banner .btn-default {
-    color: #d4d4d4;
-    border-color: #d4d4d4;
-    background-color: transparent;
-  }
-  .banner .btn-default:hover {
-    color: #fff;
-    border-color: #fff;
-    background-color: transparent;
-  }
   @media screen and (max-width: 767px) {
     .banner .banner-title {
       font-size: 2.5em;
-    }
-    .banner .btn {
-      width: 50%;
-      margin-bottom: 5px;
-    }
-    .banner .btn:last-child {
-      margin-bottom: 0;
     }
   }
   @media screen and (max-width: 480px) {

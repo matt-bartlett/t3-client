@@ -1,8 +1,8 @@
-export const getPlaylist = (state) => {
+export const playlist = (state) => {
   return state.playlist
 }
 
-export const getTracks = (state) => {
+export const tracks = (state) => {
   return state.tracks
 }
 

@@ -2,14 +2,14 @@
   <div class="container">
     <div class="col-md-8 col-md-offset-2 col-sm-12">
       <div class="form-group" id="searchbar">
-        <input @keyup.enter="searchForTracks(term)"
+        <input @keyup.enter="search(term)"
           placeholder="Search"
           v-model="term"
           class="form-control"
           type="text"
           name="track"
         >
-        <button @click.prevent="searchForTracks(term)" type="button" class="close">
+        <button @click.prevent="search(term)" type="button" class="close">
           <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
         </button>
       </div>
@@ -38,18 +38,18 @@
     },
     computed: {
       ...mapGetters({
-        tracks: 'tracks/getTracks',
+        tracks: 'tracks/tracks',
         hasUserSearched: 'tracks/hasUserSearched'
       })
     },
     methods: {
       ...mapActions({
-        searchForTracks: 'tracks/searchForTracks',
-        setBanner: 'tracks/setBanner'
+        search: 'tracks/search',
+        setBanner: 'banner/setBanner'
       })
     },
     mounted () {
-      this.setBanner()
+      this.setBanner({ title: '#THROWTOGETHERTHURSDAYS' })
     }
   }
 </script>

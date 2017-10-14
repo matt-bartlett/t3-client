@@ -1,11 +1,7 @@
-export const getPlaylists = (state) => {
+export const playlists = (state) => {
   return state.playlists
 }
 
-export const getPage = (state) => {
+export const page = (state) => {
   return state.page
-}
-
-export const getLoader = (state) => {
-  return state.loading
 }

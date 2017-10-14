@@ -4,15 +4,20 @@ import router from '@/router'
 export const getPlaylist = ({ commit }, id) => {
   return axios.get(`${process.env.API_URL}/playlists/${id}`)
     .then((response) => {
-      commit('setPlaylist', response.data.data)
-      commit('banner/setBannerTrack', response.data.data, { root: true })
+      let playlist = response.data.data
+      commit('setPlaylist', playlist)
+      commit('banner/setBanner', {
+        title: playlist.name,
+        duration: playlist.duration,
+        tracks: playlist.tracks.data.length
+      }, { root: true })
     })
     .catch(() => {
       router.push('/')
     })
 }
 
-export const searchForTracks = ({ commit }, searchTerm) => {
+export const search = ({ commit }, searchTerm) => {
   return axios.get(`${process.env.API_URL}/search?q=${searchTerm}`)
     .then((response) => {
       commit('setTracks', response.data.data)
@@ -20,11 +25,7 @@ export const searchForTracks = ({ commit }, searchTerm) => {
     })
 }
 
-export const resetSearchedTracks = ({ commit }, searchTerm) => {
+export const clear = ({ commit }) => {
   commit('setTracks', [])
   commit('setHasUserSearched', false)
-}
-
-export const setBanner = ({ commit }) => {
-  commit('banner/setDefaultBanner', null, { root: true })
 }

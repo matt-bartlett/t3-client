@@ -1,14 +1,15 @@
 <template>
   <div>
     <div class="spotify-track clearfix">
-      <div class="spotify-track-thumbnail">
+      <div class="spotify-track-thumbnail pull-left">
         <img :src="track.spotify_thumbnail_url">
       </div>
       <div class="spotify-track-information details pull-left">
         <h5 class="track-title">{{ track.title }}</h5>
         <p class="track-artist">{{ track.artist }} - <span>{{ track.album }}</span></p>
+        <p class="track-duration visible-xs">{{ track.duration_formatted }}</p>
       </div>
-      <div class="spotify-track-information pull-right">
+      <div class="spotify-track-information pull-right hidden-xs">
         <p class="track-duration">{{ track.duration_formatted }}</p>
       </div>
     </div>
@@ -24,18 +25,17 @@
 
 <style>
   .spotify-track {
-    padding: 5px 10px;
-    border-bottom: 1px solid #f9f9f9;
     -webkit-transition: background-color 200ms ease-in-out;
     -moz-transition: background-color 200ms ease-in-out;
     -o-transition: background-color 200ms ease-in-out;
     transition: background-color 200ms ease-in-out;
+    border-bottom: 1px solid #f9f9f9;
+    padding: 5px 10px;
   }
   .spotify-track:hover {
     background-color: #f8f8f8;
   }
   .spotify-track-thumbnail {
-    float: left;
     padding-right: 15px;
   }
   .spotify-track-thumbnail > img {
@@ -55,9 +55,10 @@
     font-size: 12px;
     font-weight: 300;
   }
-  @media screen and (max-width: 480px) {
-    .spotify-track-information.details {
-      width: 65%;
+  @media screen and (max-width: 768px) {
+    .spotify-track-information .track-title,
+    .spotify-track-information .track-duration {
+      margin-top: 0;
     }
   }
 </style>
