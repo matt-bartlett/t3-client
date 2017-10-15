@@ -1,16 +1,11 @@
 import axios from 'axios'
 import router from '@/router'
 
-export const getPlaylist = ({ commit }, id) => {
+export const getPlaylist = ({ commit, dispatch }, id) => {
   return axios.get(`${process.env.API_URL}/playlists/${id}`)
     .then((response) => {
-      let playlist = response.data.data
-      commit('setPlaylist', playlist)
-      commit('banner/setBanner', {
-        title: playlist.name,
-        duration: playlist.duration,
-        tracks: playlist.tracks.data.length
-      }, { root: true })
+      dispatch('banner/setPlaylist', response.data.data, { root: true })
+      commit('setPlaylist', response.data.data)
     })
     .catch(() => {
       router.push('/')

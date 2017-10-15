@@ -1,6 +1,7 @@
 import axios from 'axios'
 
-export const getPlaylists = ({ commit }, page = 1) => {
+export const getPlaylists = ({ commit, dispatch }, page = 1) => {
+  dispatch('banner/setDefault', null, { root: true })
   return axios.get(`${process.env.API_URL}/playlists?page=${page}`)
     .then((response) => {
       commit('setPlaylists', response.data.data)
@@ -8,7 +9,6 @@ export const getPlaylists = ({ commit }, page = 1) => {
         current: page,
         max: response.data.meta.pagination.total_pages
       })
-      commit('banner/setBanner', { title: '#THROWTOGETHERTHURSDAYS' }, { root: true })
     })
     .catch((response) => {
       console.log(response)

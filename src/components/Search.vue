@@ -45,11 +45,11 @@
     methods: {
       ...mapActions({
         search: 'tracks/search',
-        setBanner: 'banner/setBanner'
+        setBanner: 'banner/setDefault'
       })
     },
     mounted () {
-      this.setBanner({ title: '#THROWTOGETHERTHURSDAYS' })
+      this.setBanner()
     }
   }
 </script>

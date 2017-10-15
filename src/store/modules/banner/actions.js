@@ -1,3 +1,11 @@
-export const setBanner = ({ commit }, { title, duration, tracks }) => {
-  commit('setBanner', { title, duration, tracks })
+export const setDefault = ({ commit }) => {
+  commit('setBanner', { title: '#THROWTOGETHERTHURSDAYS' })
+}
+
+export const setPlaylist = ({ commit }, playlist) => {
+  commit('setBanner', {
+    title: playlist.name,
+    duration: playlist.duration,
+    tracks: playlist.tracks.data.length
+  })
 }
