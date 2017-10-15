@@ -1,15 +1,15 @@
 <template>
   <div>
-    <div class="spotify-track clearfix">
-      <div class="spotify-track-thumbnail pull-left">
+    <div class="spotify-track">
+      <div class="spotify-track-thumbnail">
         <img :src="track.spotify_thumbnail_url">
       </div>
-      <div class="spotify-track-information details pull-left">
+      <div class="spotify-track-information details">
         <h5 class="track-title">{{ track.title }}</h5>
         <p class="track-artist">{{ track.artist }} - <span>{{ track.album }}</span></p>
         <p class="track-duration visible-xs">{{ track.duration_formatted }}</p>
       </div>
-      <div class="spotify-track-information pull-right hidden-xs">
+      <div class="spotify-track-information duration hidden-xs">
         <p class="track-duration">{{ track.duration_formatted }}</p>
       </div>
     </div>
@@ -31,18 +31,30 @@
     transition: background-color 200ms ease-in-out;
     border-bottom: 1px solid #f9f9f9;
     padding: 5px 10px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: flex-start;
+    -moz-align-items: flex-start;
+    -o-align-items: flex-start;
+    align-items: flex-start;
   }
   .spotify-track:hover {
     background-color: #f8f8f8;
   }
   .spotify-track-thumbnail {
-    padding-right: 15px;
+    margin-right: 15px;
   }
   .spotify-track-thumbnail > img {
     width: 50px;
   }
   .spotify-track-information > * {
     margin: 0;
+  }
+  .spotify-track-information.duration {
+    margin-left: auto;
   }
   .spotify-track-information .track-title {
     margin-top: 10px;
