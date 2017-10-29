@@ -48,8 +48,9 @@
   }
   .banner .banner-title {
     color: #f9f9f9;
-    font-size: 3em;
+    font-size: 3rem;
     margin-bottom: 0;
+    word-break: break-all;
     text-transform: uppercase;
   }
   .banner .banner-details {
@@ -60,18 +61,21 @@
   .banner .banner-details .banner-span {
     font-weight: 300;
     color: #d4d4d4;
-    font-size: 1em;
+    font-size: 1rem;
     margin: 22px 15px;
     text-transform: uppercase;
   }
   @media screen and (max-width: 767px) {
     .banner .banner-title {
-      font-size: 2.5em;
+      font-size: 2.5rem;
     }
   }
   @media screen and (max-width: 480px) {
     .banner .banner-title {
-      font-size: 1.8em;
+      font-size: 1.75rem;
+    }
+    .banner .banner-details .banner-span {
+      font-size: 1.25rem;
     }
   }
 </style>

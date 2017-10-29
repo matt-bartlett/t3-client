@@ -67,7 +67,7 @@
     z-index: 2;
   }
   #searchbar > .close > span {
-    font-size: 16px;
+    font-size: 1.15rem;
   }
   .search-notice {
     margin-top: 20px;

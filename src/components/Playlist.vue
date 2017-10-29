@@ -72,7 +72,7 @@
   .spotify-playlist-thumbnail-overlay h3 {
     text-align: center;
     color: #f9f9f9;
-    font-size: 2em;
+    font-size: 2rem;
     text-transform: uppercase;
   }
   .spotify-playlist-thumbnail-overlay span {

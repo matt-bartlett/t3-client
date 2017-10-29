@@ -25,14 +25,15 @@
 <style>
   @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500');
 
-  body {
+  html, body {
     font-family: 'Montserrat', sans-serif !important;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-size: 14px;
     color: #2c3e50;
   }
   #app {
-    margin-bottom: 3em;
+    margin-bottom: 35px;
   }
   .anchor {
     text-transform: uppercase;
