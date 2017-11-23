@@ -13,7 +13,7 @@
           <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
         </button>
       </div>
-      <div v-if="tracks.length > 0">
+      <div v-if="tracks.length > 0" id="search-results">
         <track-element v-for="track in tracks" :key="track.id" :track="track"></track-element>
       </div>
       <p v-else-if="!hasUserSearched" class="search-notice text-center">Search for an Artist, Album or Track.</p>

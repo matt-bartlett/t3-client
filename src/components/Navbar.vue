@@ -1,8 +1,8 @@
 <template>
   <div class="container navbar text-center">
-    <router-link class="anchor navbar-link" to="/">Playlists<span class="navbar-link-border"></span>
+    <router-link class="anchor navbar-link" id="playlist-button" to="/">Playlists<span class="navbar-link-border"></span>
     </router-link>
-    <router-link class="anchor navbar-link" to="/search">Search
+    <router-link class="anchor navbar-link" id="search-button" to="/search">Search
       <span class="navbar-link-border"></span>
     </router-link>
   </div>
