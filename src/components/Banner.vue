@@ -61,7 +61,7 @@
   .banner .banner-details .banner-span {
     font-weight: 300;
     color: #d4d4d4;
-    font-size: 1rem;
+    font-size: 1.5rem;
     margin: 22px 15px;
     text-transform: uppercase;
   }
@@ -71,11 +71,14 @@
     }
   }
   @media screen and (max-width: 480px) {
+    .banner {
+      height: 250px;
+    }
     .banner .banner-title {
       font-size: 1.75rem;
     }
     .banner .banner-details .banner-span {
-      font-size: 1.25rem;
+      font-size: 1rem;
     }
   }
 </style>

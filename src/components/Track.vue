@@ -8,6 +8,9 @@
         <h5 class="track-title">{{ track.title }}</h5>
         <p class="track-artist">{{ track.artist }} - <span>{{ track.album }}</span></p>
         <p class="track-duration visible-xs">{{ track.duration_formatted }}</p>
+        <router-link class="track-belongs-to-playlist" v-if="track.playlist" :to="{ name: 'Tracks', params: {id : track.playlist.data.id }}">
+          Appeared In <strong>{{ track.playlist.data.name }}</strong>
+        </router-link>
       </div>
       <div class="spotify-track-information duration hidden-xs">
         <p class="track-duration">{{ track.duration_formatted }}</p>
@@ -24,6 +27,9 @@
 </script>
 
 <style>
+  .spotify-track a {
+    color: inherit;
+  }
   .spotify-track {
     -webkit-transition: background-color 200ms ease-in-out;
     -moz-transition: background-color 200ms ease-in-out;
@@ -48,7 +54,7 @@
     margin-right: 15px;
   }
   .spotify-track-thumbnail > img {
-    width: 50px;
+    width: 65px;
   }
   .spotify-track-information > * {
     margin: 0;
@@ -60,10 +66,11 @@
     margin-top: 10px;
   }
   .spotify-track-information .track-duration {
-    margin-top: 18px;
+    margin-top: 25px;
   }
   .spotify-track-information .track-artist,
-  .spotify-track-information .track-duration {
+  .spotify-track-information .track-duration,
+  .spotify-track-information .track-belongs-to-playlist {
     font-size: 12px;
     font-weight: 300;
   }
