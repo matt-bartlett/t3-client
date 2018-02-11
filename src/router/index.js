@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Playlists from '@/components/Playlists'
 import Tracks from '@/components/Tracks'
 import Search from '@/components/Search'
+import Playlists from '@/components/Playlists'
 
 Vue.use(Router)
 

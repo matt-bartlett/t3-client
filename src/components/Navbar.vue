@@ -14,23 +14,3 @@
     name: 'navbar'
   }
 </script>
-
-<style>
-  .navbar {
-    margin-bottom: 35px;
-  }
-  .navbar-link {
-    -webkit-transition: color, background 200ms ease-in-out;
-    -moz-transition: color, background 200ms ease-in-out;
-    -o-transition: color, background 200ms ease-in-out;
-    transition: color, background 200ms ease-in-out;
-    display: inline-block;
-    padding: 10px 20px;
-    min-width: 135px;
-    background: #fff;
-  }
-  .navbar-link.router-link-exact-active {
-    background: #000;
-    color: #fff;
-  }
-</style>

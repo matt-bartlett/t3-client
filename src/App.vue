@@ -10,6 +10,7 @@
 
 <script>
   import 'bootstrap-sass/assets/stylesheets/_bootstrap.scss'
+  import '@/assets/scss/app.scss'
   import Banner from '@/components/Banner'
   import Navbar from '@/components/Navbar'
 
@@ -21,28 +22,3 @@
     }
   }
 </script>
-
-<style>
-  @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500');
-
-  html, body {
-    font-family: 'Montserrat', sans-serif !important;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-size: 14px;
-    color: #2c3e50;
-  }
-  #app {
-    margin-bottom: 35px;
-  }
-  .anchor {
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    cursor: pointer;
-    color: #000;
-  }
-  .anchor:hover,
-  .anchor:focus {
-    text-decoration: none;
-  }
-</style>

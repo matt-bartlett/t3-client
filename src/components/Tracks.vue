@@ -1,7 +1,9 @@
 <template>
   <div class="container" v-if="playlist" id="tracks">
-    <div class="col-md-8 col-md-offset-2 col-sm-12">
-      <track-element :key="track.id" v-for="track in playlist.tracks.data" :track="track"></track-element>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 col-sm-12">
+        <track-element :key="track.id" v-for="track in playlist.tracks.data" :track="track"></track-element>
+      </div>
     </div>
   </div>
 </template>
@@ -27,7 +29,7 @@
         getPlaylist: 'tracks/getPlaylist'
       })
     },
-    mounted () {
+    created () {
       this.getPlaylist(this.$route.params.id)
     }
   }

@@ -1,7 +1,11 @@
 <template>
   <div class="container text-center" id="playlists">
-    <playlist :key="playlist.id" v-for="playlist in playlists" :playlist="playlist"></playlist>
-    <a class="anchor" v-if="page.hasMore()" @click.prevent="getMorePlaylists">Load more playlists</a>
+    <div class="row">
+      <playlist :key="playlist.id" v-for="playlist in playlists" :playlist="playlist"></playlist>
+    </div>
+    <div class="row">
+      <a class="anchor" v-if="page.hasMore()" @click.prevent="getMorePlaylists">Load more playlists</a>
+    </div>
   </div>
 </template>
 
