@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="spotify-track">
+    <div class="flex align-items-start spotify-track">
       <div class="spotify-track-thumbnail">
         <img :src="track.spotify_thumbnail_url">
       </div>

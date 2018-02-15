@@ -4,9 +4,9 @@
       <div class="spotify-playlist">
         <router-link :to="{ name: 'Tracks', params: {id : playlist.id }}">
           <div class="spotify-playlist-thumbnail">
-            <img :src="playlist.playlist_thumbnail_url">
-            <div class="spotify-playlist-thumbnail-overlay">
-              <h3>{{ playlist.name }}</h3>
+            <img class="image-max-width" :src="playlist.playlist_thumbnail_url">
+            <div class="flex align-items-center justify-content-center spotify-playlist-thumbnail-overlay">
+              <h3 class="uppercase">{{ playlist.name }}</h3>
               <span>{{ playlist.owner_name }}</span>
             </div>
           </div>

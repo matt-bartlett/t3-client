@@ -4,7 +4,6 @@ import router from '@/router'
 export const getPlaylist = ({ commit, dispatch }, id) => {
   return axios.get(`${process.env.API_URL}/playlists/${id}`)
     .then((response) => {
-      dispatch('banner/setPlaylist', response.data.data, { root: true })
       commit('setPlaylist', response.data.data)
     })
     .catch(() => {

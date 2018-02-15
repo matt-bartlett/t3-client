@@ -1,7 +1,9 @@
 <template>
   <div class="container-fluid" id="app">
     <div class="row">
-      <banner></banner>
+      <header class="flex banner justify-content-center align-items-center">
+        <h1 class="banner-title uppercase">#ThrowTogetherThursdays</h1>
+      </header>
       <navbar></navbar>
       <router-view></router-view>
     </div>
@@ -11,13 +13,11 @@
 <script>
   import 'bootstrap-sass/assets/stylesheets/_bootstrap.scss'
   import '@/assets/scss/app.scss'
-  import Banner from '@/components/Banner'
   import Navbar from '@/components/Navbar'
 
   export default {
     name: 'app',
     components: {
-      Banner,
       Navbar
     }
   }

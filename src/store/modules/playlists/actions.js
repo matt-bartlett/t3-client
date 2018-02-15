@@ -1,7 +1,6 @@
 import axios from 'axios'
 
 export const getPlaylists = ({ commit, dispatch }, page = 1) => {
-  dispatch('banner/setDefault', null, { root: true })
   return axios.get(`${process.env.API_URL}/playlists?page=${page}`)
     .then((response) => {
       commit('setPlaylists', response.data.data)
