@@ -2,7 +2,7 @@
   <div>
     <div class="flex align-items-start spotify-track">
       <div class="spotify-track-thumbnail">
-        <img :src="track.spotify_thumbnail_url">
+        <image-thumbnail :src="track.spotify_thumbnail_url"></image-thumbnail>
       </div>
       <div class="spotify-track-information details">
         <h5 class="track-title">{{ track.title }}</h5>
@@ -20,8 +20,13 @@
 </template>
 
 <script>
+  import ImageThumbnail from './Thumbnail'
+
   export default {
     name: 'track-element',
-    props: ['track']
+    props: ['track'],
+    components: {
+      ImageThumbnail
+    }
   }
 </script>

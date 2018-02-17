@@ -46,12 +46,8 @@
     },
     methods: {
       ...mapActions({
-        search: 'tracks/search',
-        setBanner: 'banner/setDefault'
+        search: 'tracks/search'
       })
-    },
-    mounted () {
-      this.setBanner()
     }
   }
 </script>

@@ -11,8 +11,7 @@
               <div class="playlist-details-container item-align-center">
                 <h5 class="hidden-xs uppercase">Playlist</h5>
                 <h1>{{ playlist.name }}</h1>
-                <p>Created by&nbsp;
-                  <span>{{ playlist.owner_name }}</span>
+                <p>Created by <span>{{ playlist.owner_name }}</span>
                 </p>
                 <div>
                   <p class="sub-details"><span class="glyphicon glyphicon-time" aria-hidden="true"></span>&nbsp;{{ playlist.duration }} Minutes</p>

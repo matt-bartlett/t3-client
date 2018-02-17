@@ -33,6 +33,10 @@
 
         .track-title {
             margin-top: 10px;
+
+            @media screen and (max-width: 768px) {
+                margin-top: 0;
+            }
         }
 
         .track-duration {
@@ -48,6 +52,14 @@
             @media screen and (max-width: 768px) {
                 margin-top: 0;
             }
+        }
+    }
+}
+
+#search-results {
+    .spotify-track {
+        .track-title {
+            margin-top: 0;
         }
     }
 }
