@@ -1,6 +1,7 @@
 <template>
   <div class="container-fluid" v-if="playlist" id="tracks">
-    <div class="row">
+    <loader v-if="isLoading"></loader>
+    <div v-if="!isLoading" class="row">
       <div class="col-xs-12 playlist-profile">
         <div class="row">
           <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
@@ -23,7 +24,7 @@
         </div>
       </div>
     </div>
-    <div class="row">
+    <div v-if="!isLoading" class="row">
       <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
         <track-element :key="track.id" v-for="track in playlist.tracks.data" :track="track"></track-element>
       </div>
@@ -34,15 +35,18 @@
 <script>
   import { mapActions, mapGetters } from 'vuex'
   import TrackElement from './Track'
+  import Loader from './Loader'
 
   export default {
     name: 'tracks',
     components: {
-      TrackElement
+      TrackElement,
+      Loader
     },
     computed: {
       ...mapGetters({
-        playlist: 'tracks/playlist'
+        playlist: 'tracks/playlist',
+        isLoading: 'tracks/loading'
       })
     },
     methods: {

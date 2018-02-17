@@ -2,11 +2,14 @@ import axios from 'axios'
 import router from '@/router'
 
 export const getPlaylist = ({ commit, dispatch }, id) => {
+  commit('setLoading', true)
   return axios.get(`${process.env.API_URL}/playlists/${id}`)
     .then((response) => {
       commit('setPlaylist', response.data.data)
+      commit('setLoading', false)
     })
     .catch(() => {
+      commit('setLoading', false)
       router.push('/')
     })
 }
