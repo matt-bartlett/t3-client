@@ -1,16 +1,15 @@
 import axios from 'axios'
 import router from '@/router'
 
-export const getPlaylist = ({ commit, dispatch, state }, id) => {
+export const getPlaylist = ({ commit, dispatch }, id) => {
   commit('setLoading', true)
   return axios.get(`${process.env.API_URL}/playlists/${id}`)
     .then((response) => {
       commit('setPlaylist', response.data.data)
+      commit('setLoading', false)
     })
     .catch(() => {
       router.push('/')
-    })
-    .finally(() => {
       commit('setLoading', false)
     })
 }
@@ -23,11 +22,10 @@ export const search = ({ commit, dispatch }, searchTerm) => {
     .then((response) => {
       commit('setTracks', response.data.data)
       commit('setHasUserSearched', true)
+      commit('setLoading', false)
     })
     .catch((response) => {
       console.log(response)
-    })
-    .finally(() => {
       commit('setLoading', false)
     })
 }
