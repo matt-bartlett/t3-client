@@ -3,24 +3,28 @@
     <div class="row">
       <playlist :key="playlist.id" v-for="playlist in playlists" :playlist="playlist"></playlist>
     </div>
-    <div class="row">
+    <div v-if="!isLoading" class="row">
       <a class="anchor" v-if="page.hasMore()" @click.prevent="getMorePlaylists">Load more playlists</a>
     </div>
+    <loader v-if="isLoading"></loader>
   </div>
 </template>
 
 <script>
   import { mapActions, mapGetters } from 'vuex'
   import Playlist from './Playlist'
+  import Loader from './Loader'
 
   export default {
     name: 'playlists',
     components: {
-      Playlist
+      Playlist,
+      Loader
     },
     computed: {
       ...mapGetters({
         page: 'playlists/page',
+        isLoading: 'playlists/loading',
         playlists: 'playlists/playlists'
       })
     },

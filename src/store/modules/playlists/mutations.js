@@ -10,3 +10,6 @@ export const setPageData = (state, { current, max }) => {
   state.page.current = current
   state.page.max = max || state.page.max
 }
+export const setLoading = (state, loading) => {
+  state.loading = loading
+}

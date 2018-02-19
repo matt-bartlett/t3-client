@@ -14,7 +14,8 @@
             <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
           </button>
         </div>
-        <div v-if="tracks.length > 0" id="search-results">
+        <loader v-if="isLoading"></loader>
+        <div v-else-if="tracks.length > 0" id="search-results">
           <track-element v-for="track in tracks" :key="track.id" :track="track"></track-element>
         </div>
         <p v-else-if="!hasUserSearched" class="search-notice text-center">Search for an Artist, Album or Track.</p>
@@ -27,6 +28,7 @@
 <script>
   import { mapActions, mapGetters } from 'vuex'
   import TrackElement from './Track'
+  import Loader from './Loader'
 
   export default {
     name: 'search',
@@ -36,11 +38,13 @@
       }
     },
     components: {
-      TrackElement
+      TrackElement,
+      Loader
     },
     computed: {
       ...mapGetters({
         tracks: 'tracks/tracks',
+        isLoading: 'tracks/loading',
         hasUserSearched: 'tracks/hasUserSearched'
       })
     },

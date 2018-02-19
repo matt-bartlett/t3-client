@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div id="loader">
+    <div id="loader" class="flex justify-content-center">
       <div id="circle1"></div>
       <div id="circle2"></div>
       <div></div>

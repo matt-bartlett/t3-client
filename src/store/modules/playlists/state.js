@@ -6,5 +6,6 @@ export default {
       return this.current < this.max
     }
   },
+  loading: false,
   playlists: []
 }
