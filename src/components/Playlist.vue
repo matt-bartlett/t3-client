@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="col-md-4 col-sm-12">
+    <div class="col-lg-3 col-md-4 col-sm-12">
       <div class="spotify-playlist">
         <router-link :to="{ name: 'Tracks', params: {id : playlist.id }}">
           <div class="spotify-playlist-thumbnail">

@@ -9,11 +9,10 @@ export const getPlaylists = ({ commit, dispatch }, page = 1) => {
         current: page,
         max: response.data.meta.pagination.total_pages
       })
+      commit('setLoading', false)
     })
     .catch((response) => {
       console.log(response)
-    })
-    .finally(() => {
       commit('setLoading', false)
     })
 }
@@ -27,11 +26,10 @@ export const getMorePlaylists = ({ commit, state }, page = 1) => {
         current: state.page.current + 1,
         max: response.data.meta.pagination.total_pages
       })
+      commit('setLoading', false)
     })
     .catch((response) => {
       console.log(response)
-    })
-    .finally(() => {
       commit('setLoading', false)
     })
 }

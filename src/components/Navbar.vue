@@ -6,6 +6,9 @@
     <router-link class="anchor navbar-link" id="search-button" to="/search">
       <span class="glyphicon glyphicon-search" aria-hidden="true"></span>&nbsp;Search
     </router-link>
+    <router-link class="anchor navbar-link" id="stats-button" to="/statistics">
+      <span class="glyphicon glyphicon-signal" aria-hidden="true"></span>&nbsp;Statistics
+    </router-link>
   </div>
 </template>
 

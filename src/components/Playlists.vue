@@ -1,5 +1,5 @@
 <template>
-  <div class="container text-center" id="playlists">
+  <div class="container-fluid text-center" id="playlists">
     <div class="row">
       <playlist :key="playlist.id" v-for="playlist in playlists" :playlist="playlist"></playlist>
     </div>
