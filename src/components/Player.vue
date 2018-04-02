@@ -24,7 +24,10 @@
     ],
     watch: {
       track () {
-        this.$refs.player.load()
+        // Safari workaround for loading new tracks to the player
+        setTimeout(() => {
+          this.$refs.player.load()
+        }, 100)
       }
     },
     methods: {
