@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid" v-if="playlist" id="tracks">
+  <div class="container-fluid" :class="{ 'is-playing' : isTrackPlaying }" v-if="playlist" id="tracks">
     <loader v-if="isLoading"></loader>
     <div v-if="!isLoading" class="row">
       <div class="col-xs-12 playlist-profile">
@@ -14,8 +14,14 @@
                 <h1>{{ playlist.name }}</h1>
                 <p>Created by <span>{{ playlist.owner_name }}</span></p>
                 <div>
-                  <p class="sub-details"><span class="glyphicon glyphicon-time" aria-hidden="true"></span>&nbsp;{{ playlist.duration }} Minutes</p>
-                  <p class="sub-details"><span class="glyphicon glyphicon-music" aria-hidden="true"></span>&nbsp;{{ playlist.tracks.data.length }} Tracks</p>
+                  <p class="sub-details">
+                    <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                    &nbsp;{{ playlist.duration }} Minutes
+                  </p>
+                  <p class="sub-details">
+                    <span class="glyphicon glyphicon-music" aria-hidden="true"></span>
+                    &nbsp;{{ playlist.tracks.data.length }} Tracks
+                  </p>
                 </div>
               </div>
             </div>
@@ -44,8 +50,9 @@
     },
     computed: {
       ...mapGetters({
+        isLoading: 'tracks/loading',
         playlist: 'tracks/playlist',
-        isLoading: 'tracks/loading'
+        isTrackPlaying: 'player/getPlaying'
       })
     },
     methods: {

@@ -1,14 +1,23 @@
 <template>
   <div>
-    <div class="flex align-items-start spotify-track">
+    <div
+      class="flex align-items-start spotify-track"
+      :class="{ 'is-playing' : isTrackPlaying && isTrackPlaying.title === track.title }"
+      @click.prevent="setPlaying(track)"
+    >
       <div class="spotify-track-thumbnail">
+        <img src="../assets/images/play.svg" class="spotify-track-play" alt="Play">
         <image-thumbnail :src="track.spotify_thumbnail_url"></image-thumbnail>
       </div>
       <div class="spotify-track-information details">
         <h5 class="track-title">{{ track.title }}</h5>
         <p class="track-artist">{{ track.artist }} - <span>{{ track.album }}</span></p>
         <p class="track-duration visible-xs">{{ track.duration_formatted }}</p>
-        <router-link class="track-belongs-to-playlist" v-if="track.playlist" :to="{ name: 'Tracks', params: {id : track.playlist.data.id }}">
+        <router-link
+          v-if="track.playlist"
+          class="track-belongs-to-playlist"
+          :to="{ name: 'Tracks', params: {id : track.playlist.data.id }}"
+        >
           Appeared In <strong>{{ track.playlist.data.name }}</strong>
         </router-link>
       </div>
@@ -20,6 +29,7 @@
 </template>
 
 <script>
+  import { mapActions, mapGetters } from 'vuex'
   import ImageThumbnail from './Thumbnail'
 
   export default {
@@ -27,6 +37,16 @@
     props: ['track'],
     components: {
       ImageThumbnail
+    },
+    computed: {
+      ...mapGetters({
+        isTrackPlaying: 'player/getPlaying'
+      })
+    },
+    methods: {
+      ...mapActions({
+        setPlaying: 'player/setPlaying'
+      })
     }
   }
 </script>

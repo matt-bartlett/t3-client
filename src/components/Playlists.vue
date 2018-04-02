@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid text-center" id="playlists">
+  <div class="container-fluid text-center" :class="{ 'is-playing' : isTrackPlaying }" id="playlists">
     <div class="row">
       <playlist :key="playlist.id" v-for="playlist in playlists" :playlist="playlist"></playlist>
     </div>
@@ -25,7 +25,8 @@
       ...mapGetters({
         page: 'playlists/page',
         isLoading: 'playlists/loading',
-        playlists: 'playlists/playlists'
+        playlists: 'playlists/playlists',
+        isTrackPlaying: 'player/getPlaying'
       })
     },
     methods: {

@@ -1,3 +1,9 @@
+#playlists {
+    &.is-playing {
+        margin-bottom: 80px;
+    }
+}
+
 .spotify-playlist {
     overflow: hidden;
     padding: 0px;

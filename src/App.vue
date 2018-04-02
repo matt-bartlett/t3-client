@@ -6,19 +6,28 @@
       </header>
       <navbar></navbar>
       <router-view></router-view>
+      <player v-if="isTrackPlaying" :class="{ 'is-playing' : isTrackPlaying }" :track="isTrackPlaying"></player>
     </div>
   </div>
 </template>
 
 <script>
+  import { mapGetters } from 'vuex'
   import 'bootstrap-sass/assets/stylesheets/_bootstrap.scss'
   import '@/assets/scss/app.scss'
   import Navbar from '@/components/Navbar'
+  import Player from '@/components/Player'
 
   export default {
     name: 'app',
     components: {
-      Navbar
+      Navbar,
+      Player
+    },
+    computed: {
+      ...mapGetters({
+        isTrackPlaying: 'player/getPlaying'
+      })
     }
   }
 </script>

@@ -1,10 +1,17 @@
+#tracks {
+    &.is-playing {
+        margin-bottom: 80px;
+    }
+}
+
 .spotify-track {
     -webkit-transition: background-color 200ms ease-in-out;
     -moz-transition: background-color 200ms ease-in-out;
     -o-transition: background-color 200ms ease-in-out;
     transition: background-color 200ms ease-in-out;
-    border-bottom: 1px solid #f9f9f9;
+    border-bottom: 1px solid #f8f8f8;
     padding: 5px 10px;
+    cursor: pointer;
 
     a {
         color: inherit;
@@ -12,6 +19,22 @@
 
     &:hover {
         background-color: #f8f8f8;
+
+        .spotify-track-thumbnail {
+            .spotify-track-play {
+                opacity: 1;
+            }
+        }
+    }
+
+    &.is-playing {
+        background-color: #f0f0f0;
+
+        .spotify-track-thumbnail {
+            .spotify-track-play {
+                opacity: 1;
+            }
+        }
     }
 
     .spotify-track-thumbnail {
@@ -19,6 +42,15 @@
 
         img {
             width: 50px;
+        }
+
+        .spotify-track-play {
+            -webkit-transition: opacity 150ms ease-in;
+            -moz-transition: opacity 150ms ease-in;
+            -o-transition: opacity 150ms ease-in;
+            transition: opacity 150ms ease-in;
+            position: absolute;
+            opacity: 0;
         }
     }
 
