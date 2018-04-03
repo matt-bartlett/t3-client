@@ -1,17 +1,20 @@
 #searchbar {
     position: relative;
     display: block;
+
+    .close {
+        top: calc(50% - 11px);
+        position: absolute;
+        outline: none;
+        right: 10px;
+        z-index: 2;
+
+        span {
+            font-size: 1.15rem;
+        }
+    }
 }
-#searchbar > .close {
-    top: calc(50% - 11px);
-    position: absolute;
-    outline: none;
-    right: 10px;
-    z-index: 2;
-}
-#searchbar > .close > span {
-    font-size: 1.15rem;
-}
+
 .search-notice {
     margin-top: 20px;
 }

@@ -1,7 +1,7 @@
 <template>
-  <div class="container">
+  <div class="container-fluid" id="search">
     <div class="row">
-      <div class="col-md-8 col-md-offset-2 col-sm-12">
+      <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
         <div class="form-group" id="searchbar">
           <input @keyup.enter="search(term)"
             placeholder="Search"

@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid" id="app">
+  <div class="container-fluid" :class="{ 'is-playing' : isTrackPlaying }" id="app">
     <div class="row">
       <header class="flex banner justify-content-center align-items-center">
         <h1 class="banner-title uppercase">#ThrowTogetherThursdays</h1>

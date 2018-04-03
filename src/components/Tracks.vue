@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid" :class="{ 'is-playing' : isTrackPlaying }" v-if="playlist" id="tracks">
+  <div class="container-fluid" v-if="playlist" id="tracks">
     <loader v-if="isLoading"></loader>
     <div v-if="!isLoading" class="row">
       <div class="col-xs-12 playlist-profile">
@@ -51,8 +51,7 @@
     computed: {
       ...mapGetters({
         isLoading: 'tracks/loading',
-        playlist: 'tracks/playlist',
-        isTrackPlaying: 'player/getPlaying'
+        playlist: 'tracks/playlist'
       })
     },
     methods: {
