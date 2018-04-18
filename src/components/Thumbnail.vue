@@ -3,18 +3,21 @@
 </template>
 
 <script>
+  import ImagePlaceholder from '@/assets/images/placeholder.png'
+
   export default {
     name: 'thumbnail',
     props: ['src'],
     data () {
       return {
         observer: null,
-        intersected: null
+        intersected: null,
+        placeholder: ImagePlaceholder
       }
     },
     computed: {
       srcImage () {
-        return this.intersected ? this.src : ''
+        return this.intersected ? this.src : this.placeholder
       }
     },
     mounted () {
