@@ -1,12 +1,12 @@
 <template>
   <div>
     <div class="col-lg-3 col-md-4 col-sm-12">
-      <div class="spotify-playlist">
+      <div class="playlist">
         <router-link :to="{ name: 'Tracks', params: {id : playlist.id }}">
-          <div class="spotify-playlist-thumbnail">
+          <div class="playlist-container">
             <image-thumbnail class="image-max-width" :src="playlist.playlist_thumbnail_url"></image-thumbnail>
-            <div class="flex align-items-center justify-content-center spotify-playlist-thumbnail-overlay">
-              <h3 class="uppercase">{{ playlist.name }}</h3>
+            <div class="flex align-items-center justify-content-center playlist-overlay">
+              <h1 class="uppercase text-center">{{ playlist.name }}</h1>
               <span>{{ playlist.owner_name }}</span>
             </div>
           </div>

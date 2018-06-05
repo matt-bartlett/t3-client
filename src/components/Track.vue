@@ -8,7 +8,7 @@
         <img src="../assets/images/play.svg" class="spotify-track-play" alt="Play">
         <image-thumbnail :src="track.spotify_thumbnail_url"></image-thumbnail>
       </div>
-      <div class="spotify-track-information details">
+      <div class="spotify-track-information">
         <h5 class="track-title">{{ track.title }}</h5>
         <p class="track-artist">{{ track.artist }} - <span>{{ track.album }}</span></p>
         <p class="track-duration visible-xs">{{ track.duration_formatted }}</p>

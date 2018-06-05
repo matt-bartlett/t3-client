@@ -1,8 +1,8 @@
 .spotify-track {
     -webkit-transition: background-color 200ms ease-in-out;
-    -moz-transition: background-color 200ms ease-in-out;
-    -o-transition: background-color 200ms ease-in-out;
-    transition: background-color 200ms ease-in-out;
+       -moz-transition: background-color 200ms ease-in-out;
+         -o-transition: background-color 200ms ease-in-out;
+            transition: background-color 200ms ease-in-out;
     border-bottom: 1px solid #f8f8f8;
     padding: 5px 10px;
     cursor: pointer;
@@ -40,9 +40,9 @@
 
         .spotify-track-play {
             -webkit-transition: opacity 150ms ease-in;
-            -moz-transition: opacity 150ms ease-in;
-            -o-transition: opacity 150ms ease-in;
-            transition: opacity 150ms ease-in;
+               -moz-transition: opacity 150ms ease-in;
+                 -o-transition: opacity 150ms ease-in;
+                    transition: opacity 150ms ease-in;
             position: absolute;
             opacity: 0;
         }

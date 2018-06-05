@@ -1,9 +1,9 @@
 <template>
-  <div class="container-fluid text-center" id="playlists">
+  <div class="container-fluid" id="playlists">
     <div class="row">
       <playlist :key="playlist.id" v-for="playlist in playlists" :playlist="playlist"></playlist>
     </div>
-    <div v-if="!isLoading" class="row">
+    <div v-if="!isLoading" class="row text-center">
       <a class="anchor" v-if="page.hasMore()" @click.prevent="getMorePlaylists">Load more playlists</a>
     </div>
     <loader v-if="isLoading"></loader>
