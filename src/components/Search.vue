@@ -9,6 +9,7 @@
             class="form-control"
             type="text"
             name="track"
+            ref="search"
           >
           <button @click.prevent="search(term)" type="button" class="close">
             <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
@@ -52,6 +53,9 @@
       ...mapActions({
         search: 'tracks/search'
       })
+    },
+    mounted () {
+      this.$refs.search.focus()
     }
   }
 </script>
