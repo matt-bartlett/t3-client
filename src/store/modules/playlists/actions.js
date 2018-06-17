@@ -12,7 +12,7 @@ export const getPlaylists = ({ commit, dispatch }, page = 1) => {
       commit('setLoading', false)
     })
     .catch((response) => {
-      console.log(response)
+      commit('setError', response.response.data.message)
       commit('setLoading', false)
     })
 }
@@ -29,7 +29,7 @@ export const getMorePlaylists = ({ commit, state }, page = 1) => {
       commit('setLoading', false)
     })
     .catch((response) => {
-      console.log(response)
+      commit('setError', response.response.data.message)
       commit('setLoading', false)
     })
 }

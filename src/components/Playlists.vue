@@ -3,7 +3,10 @@
     <div class="row">
       <playlist :key="playlist.id" v-for="playlist in playlists" :playlist="playlist"></playlist>
     </div>
-    <div v-if="!isLoading" class="row text-center">
+    <div v-if="error" class="row">
+      <p class="text-center">{{ error }}</p>
+    </div>
+    <div v-if="!isLoading && !error" class="row text-center">
       <a class="anchor" v-if="page.hasMore()" @click.prevent="getMorePlaylists">Load more playlists</a>
     </div>
     <loader v-if="isLoading"></loader>
@@ -24,6 +27,7 @@
     computed: {
       ...mapGetters({
         page: 'playlists/page',
+        error: 'playlists/error',
         isLoading: 'playlists/loading',
         playlists: 'playlists/playlists'
       })

@@ -10,6 +10,7 @@
             type="text"
             name="track"
             ref="search"
+            autocomplete="off"
           >
           <button @click.prevent="search(term)" type="button" class="close">
             <span class="glyphicon glyphicon-search" aria-hidden="true"></span>

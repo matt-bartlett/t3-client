@@ -7,5 +7,6 @@ export default {
     }
   },
   loading: false,
-  playlists: []
+  playlists: [],
+  error: null
 }
