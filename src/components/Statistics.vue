@@ -22,7 +22,7 @@
 
 <script>
   import { mapActions, mapGetters } from 'vuex'
-  import Loader from './Loader'
+  import Loader from './Elements/Loader'
 
   export default {
     name: 'statistics',

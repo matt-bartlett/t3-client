@@ -15,8 +15,8 @@
   import { mapGetters } from 'vuex'
   import 'bootstrap-sass/assets/stylesheets/_bootstrap.scss'
   import '@/assets/scss/app.scss'
+  import Player from '@/components/Elements/Player'
   import Navbar from '@/components/Navbar'
-  import Player from '@/components/Player'
 
   export default {
     name: 'app',

@@ -29,8 +29,8 @@
 
 <script>
   import { mapActions, mapGetters } from 'vuex'
-  import TrackElement from './Track'
-  import Loader from './Loader'
+  import TrackElement from './Elements/Track'
+  import Loader from './Elements/Loader'
 
   export default {
     name: 'search',

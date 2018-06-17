@@ -5,7 +5,7 @@
       :class="{ 'is-playing' : isTrackPlaying && isTrackPlaying.title === track.title }"
     >
       <div class="spotify-track-thumbnail" @click.prevent="setPlaying(track)">
-        <img src="../assets/images/play.svg" class="spotify-track-play" alt="Play">
+        <img src="../../assets/images/play.svg" class="spotify-track-play" alt="Play">
         <image-thumbnail :src="track.spotify_thumbnail_url"></image-thumbnail>
       </div>
       <div class="spotify-track-information">

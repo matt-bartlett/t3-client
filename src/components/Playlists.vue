@@ -15,8 +15,8 @@
 
 <script>
   import { mapActions, mapGetters } from 'vuex'
-  import Playlist from './Playlist'
-  import Loader from './Loader'
+  import Playlist from './Elements/Playlist'
+  import Loader from './Elements/Loader'
 
   export default {
     name: 'playlists',
