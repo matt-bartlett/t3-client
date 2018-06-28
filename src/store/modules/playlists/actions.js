@@ -1,6 +1,7 @@
 import axios from 'axios'
 
-export const getPlaylists = ({ commit, dispatch }, page = 1) => {
+export const getPlaylists = ({ commit }, page = 1) => {
+  commit('setError', null)
   commit('setLoading', true)
   return axios.get(`${process.env.API_URL}/playlists?page=${page}`)
     .then((response) => {
@@ -11,13 +12,14 @@ export const getPlaylists = ({ commit, dispatch }, page = 1) => {
       })
       commit('setLoading', false)
     })
-    .catch((response) => {
-      commit('setError', response.response.data.message)
+    .catch((error) => {
+      commit('setError', error.response.data.message)
       commit('setLoading', false)
     })
 }
 
 export const getMorePlaylists = ({ commit, state }, page = 1) => {
+  commit('setError', null)
   commit('setLoading', true)
   return axios.get(`${process.env.API_URL}/playlists?page=${state.page.current + 1}`)
     .then((response) => {
@@ -28,8 +30,8 @@ export const getMorePlaylists = ({ commit, state }, page = 1) => {
       })
       commit('setLoading', false)
     })
-    .catch((response) => {
-      commit('setError', response.response.data.message)
+    .catch((error) => {
+      commit('setError', error.response.data.message)
       commit('setLoading', false)
     })
 }

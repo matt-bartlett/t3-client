@@ -5,3 +5,7 @@ export const statistics = (state) => {
 export const loading = (state) => {
   return state.loading
 }
+
+export const error = (state) => {
+  return state.error
+}

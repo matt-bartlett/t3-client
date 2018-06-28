@@ -59,7 +59,7 @@
         getPlaylist: 'tracks/getPlaylist'
       })
     },
-    created () {
+    mounted () {
       this.getPlaylist(this.$route.params.id)
     }
   }

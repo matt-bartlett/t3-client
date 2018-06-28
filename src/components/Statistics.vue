@@ -1,7 +1,10 @@
 <template>
   <div class="container text-center">
-    <div class="row" v-if="!isLoading">
-      <div class="statistics">
+    <div class="row">
+      <div v-if="error" class="row">
+        <p class="text-center">{{ error }}</p>
+      </div>
+      <div class="statistics" v-if="!isLoading && !error">
         <div class="col-xs-12 col-sm-4">
           <h3 class="uppercase">Playlists</h3>
           <h1>{{ statistics.PlaylistCount }}</h1>
@@ -16,7 +19,7 @@
         </div>
       </div>
     </div>
-    <loader v-else-if="isLoading"></loader>
+    <loader v-if="isLoading"></loader>
   </div>
 </template>
 
@@ -31,6 +34,7 @@
     },
     computed: {
       ...mapGetters({
+        error: 'statistics/error',
         isLoading: 'statistics/loading',
         statistics: 'statistics/statistics'
       })
@@ -40,7 +44,7 @@
         getStatistics: 'statistics/getStatistics'
       })
     },
-    created () {
+    mounted () {
       this.getStatistics()
     }
   }
