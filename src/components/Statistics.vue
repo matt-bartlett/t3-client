@@ -1,21 +1,21 @@
 <template>
   <div class="container text-center">
     <div class="row">
-      <div v-if="error" class="row">
+      <div v-if="error">
         <p class="text-center">{{ error }}</p>
       </div>
       <div class="statistics" v-if="!isLoading && !error">
         <div class="col-xs-12 col-sm-4">
           <h3 class="uppercase">Playlists</h3>
-          <h1>{{ statistics.PlaylistCount }}</h1>
+          <Counter :max="statistics.PlaylistCount"></Counter>
         </div>
         <div class="col-xs-12 col-sm-4">
           <h3 class="uppercase">Tracks</h3>
-          <h1>{{ statistics.TrackCount }}</h1>
+          <Counter :max="statistics.TrackCount"></Counter>
         </div>
         <div class="col-xs-12 col-sm-4">
           <h3 class="uppercase">Minutes</h3>
-          <h1>{{ statistics.AllTrackDuration }}</h1>
+          <Counter :max="statistics.AllTrackDuration"></Counter>
         </div>
       </div>
     </div>
@@ -25,11 +25,13 @@
 
 <script>
   import { mapActions, mapGetters } from 'vuex'
+  import Counter from './Elements/Counter'
   import Loader from './Elements/Loader'
 
   export default {
     name: 'statistics',
     components: {
+      Counter,
       Loader
     },
     computed: {

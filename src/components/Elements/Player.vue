@@ -6,8 +6,8 @@
           <h5>{{ track.title }}</h5>
           <p>{{ track.artist }} - <span>{{ track.album }}</span></p>
           <audio v-if="track.spotify_preview_url" controls autoplay ref="player">
-            <source type="audio/mp3" :src="track.spotify_preview_url"></source>
-            Your browser does not support the audio HTML element.
+            <source type="audio/mp3" :src="track.spotify_preview_url">
+              Your browser does not support the audio HTML element.
           </audio>
           <p class="unavailable" v-else>Track not available</p>
         </div>
