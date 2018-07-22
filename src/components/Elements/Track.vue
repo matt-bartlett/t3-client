@@ -1,7 +1,7 @@
 <template>
   <div>
     <div
-      class="flex align-items-start spotify-track"
+      class="flex align-items-center spotify-track"
       :class="{ 'is-playing' : isTrackPlaying && isTrackPlaying.title === track.title }"
     >
       <div class="spotify-track-thumbnail" @click.prevent="setPlaying(track)">
@@ -12,13 +12,15 @@
         <h5 class="track-title">{{ track.title }}</h5>
         <p class="track-artist">{{ track.artist }} - <span>{{ track.album }}</span></p>
         <p class="track-duration visible-xs">{{ track.duration_formatted }}</p>
-        <router-link
-          v-if="track.playlist"
-          class="track-belongs-to-playlist"
-          :to="{ name: 'Tracks', params: {id : track.playlist.data.id }}"
-        >
-          Appeared In <strong>{{ track.playlist.data.name }}</strong>
-        </router-link>
+        <div v-if="track.playlists">
+          <router-link
+            :key="playlist.id"
+            :to="{ name: 'Tracks', params: {id : playlist.id }}"
+            class="track-belongs-to-playlist"
+            v-for="playlist in track.playlists.data"
+          ><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>&nbsp;{{ playlist.name }}
+          </router-link>
+        </div>
       </div>
       <div class="spotify-track-information duration hidden-xs">
         <p class="track-duration">{{ track.duration_formatted }}</p>
@@ -26,6 +28,8 @@
     </div>
   </div>
 </template>
+
+
 
 <script>
   import { mapActions, mapGetters } from 'vuex'

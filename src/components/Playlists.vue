@@ -1,7 +1,8 @@
 <template>
   <div class="container-fluid" id="playlists">
     <div class="row">
-      <playlist :key="playlist.id" v-for="playlist in playlists" :playlist="playlist"></playlist>
+      <playlist v-if="playlists.length > 0" :key="playlist.id" v-for="playlist in playlists" :playlist="playlist"></playlist>
+      <p v-if="playlists.length === 0 && !isLoading" class="text-center uppercase">No Playlists found</p>
     </div>
     <div v-if="error" class="row">
       <p class="text-center">{{ error }}</p>

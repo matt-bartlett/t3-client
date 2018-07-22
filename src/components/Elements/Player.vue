@@ -3,8 +3,9 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
-          <h5>{{ track.title }}</h5>
-          <p>{{ track.artist }} - <span>{{ track.album }}</span></p>
+          <button @click="close" type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+          <h5 class="text-center">{{ track.title }}</h5>
+          <p class="text-center">{{ track.artist }} - <span>{{ track.album }}</span></p>
           <audio v-if="track.spotify_preview_url" controls autoplay ref="player">
             <source type="audio/mp3" :src="track.spotify_preview_url">
               Your browser does not support the audio HTML element.
@@ -34,7 +35,10 @@
     methods: {
       ...mapActions({
         setPlaying: 'player/setPlaying'
-      })
+      }),
+      close () {
+        this.setPlaying(null)
+      }
     },
     mounted () {
       this.$refs.player.addEventListener('ended', () => {

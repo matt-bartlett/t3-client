@@ -2,6 +2,11 @@
     position: relative;
     display: block;
 
+    input:focus,
+    input:active {
+        outline: 0;
+    }
+
     .close {
         top: calc(50% - 11px);
         position: absolute;

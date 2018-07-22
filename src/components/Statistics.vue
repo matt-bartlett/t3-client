@@ -7,15 +7,15 @@
       <div class="statistics" v-if="!isLoading && !error">
         <div class="col-xs-12 col-sm-4">
           <h3 class="uppercase">Playlists</h3>
-          <Counter :max="statistics.PlaylistCount"></Counter>
+          <Counter :max="statistics.total_playlist_count"></Counter>
         </div>
         <div class="col-xs-12 col-sm-4">
           <h3 class="uppercase">Tracks</h3>
-          <Counter :max="statistics.TrackCount"></Counter>
+          <Counter :max="statistics.total_track_count"></Counter>
         </div>
         <div class="col-xs-12 col-sm-4">
           <h3 class="uppercase">Minutes</h3>
-          <Counter :max="statistics.AllTrackDuration"></Counter>
+          <Counter :max="statistics.total_track_duration"></Counter>
         </div>
       </div>
     </div>

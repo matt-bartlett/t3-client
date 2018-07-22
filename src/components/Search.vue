@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
         <div class="form-group" id="searchbar">
-          <input @keyup.enter="search(term)"
+          <input @keyup.enter="triggerSearch(term)"
             placeholder="Search"
             v-model="term"
             class="form-control"
@@ -12,7 +12,7 @@
             ref="search"
             autocomplete="off"
           >
-          <button @click.prevent="search(term)" type="button" class="close">
+          <button @click.prevent="triggerSearch()" type="button" class="close">
             <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
           </button>
         </div>
@@ -53,7 +53,12 @@
     methods: {
       ...mapActions({
         search: 'tracks/search'
-      })
+      }),
+      triggerSearch () {
+        if (this.term !== null && this.term !== '') {
+          this.search(this.term)
+        }
+      }
     },
     mounted () {
       this.$refs.search.focus()
