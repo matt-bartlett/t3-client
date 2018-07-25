@@ -3,7 +3,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
-          <button @click="close" type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+          <a @click="close" type="button" class="close"><span>&times;</span></a>
           <h5 class="text-center">{{ track.title }}</h5>
           <p class="text-center">{{ track.artist }} - <span>{{ track.album }}</span></p>
           <audio v-if="track.spotify_preview_url" controls autoplay ref="player">

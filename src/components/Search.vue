@@ -1,10 +1,13 @@
 <template>
   <div class="container-fluid" id="search">
     <div class="row">
-      <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
+      <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-12">
         <div class="form-group" id="searchbar">
-          <input @keyup.enter="triggerSearch(term)"
-            placeholder="Search"
+          <label class="control-label placeholder" :class="{ 'active' : this.active }">Search</label>
+          <input
+            @keyup.enter="triggerSearch(term)"
+            @focus="active = true"
+            @blur="canBlur()"
             v-model="term"
             class="form-control"
             type="text"
@@ -16,6 +19,8 @@
             <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
           </button>
         </div>
+      </div>
+      <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
         <loader v-if="isLoading"></loader>
         <div v-else-if="tracks.length > 0" id="search-results">
           <track-element v-for="track in tracks" :key="track.id" :track="track"></track-element>
@@ -36,7 +41,8 @@
     name: 'search',
     data () {
       return {
-        term: null
+        term: null,
+        active: false
       }
     },
     components: {
@@ -55,9 +61,12 @@
         search: 'tracks/search'
       }),
       triggerSearch () {
-        if (this.term !== null && this.term !== '') {
+        if (this.term) {
           this.search(this.term)
         }
+      },
+      canBlur () {
+        this.active = this.term !== null && this.term !== ''
       }
     },
     mounted () {

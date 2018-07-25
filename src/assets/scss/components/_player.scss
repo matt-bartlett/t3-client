@@ -1,8 +1,9 @@
 #player {
     border-top: 1px solid #ddd;
-    background-color: #eee;
+    background-color: #1E1A1D;
     padding: 10px 10px;
     position: fixed;
+    color: #95A3A4;
     bottom: 0;
     right: 0;
     left: 0;
@@ -11,6 +12,7 @@
         font-size: 1rem;
         margin-top: 0;
         margin-bottom: 0;
+        color: #E3E4DB;
     }
 
     p {
@@ -26,6 +28,16 @@
 
     .close {
         font-size: 2rem;
+        color: #E3E4DB;
+        opacity: 1;
+        text-shadow: none;
+
+        &:hover,
+        &:focus {
+            outline: 0;
+            color: #95A3A4;
+            opacity: 1;
+        }
     }
 
     audio {

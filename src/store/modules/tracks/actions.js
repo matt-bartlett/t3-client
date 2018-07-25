@@ -1,7 +1,7 @@
 import axios from 'axios'
 import router from '@/router'
 
-export const getPlaylist = ({ commit, dispatch }, id) => {
+export const getPlaylist = ({ commit }, id) => {
   commit('setLoading', true)
   return axios.get(`${process.env.API_URL}/playlists/${id}`)
     .then((response) => {

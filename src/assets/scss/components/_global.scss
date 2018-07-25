@@ -3,7 +3,7 @@ html, body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-size: 14px;
-    color: #2c3e50;
+    color: #2C3E50;
 }
 #app {
     margin-bottom: 35px;
@@ -33,12 +33,11 @@ html, body {
             transition: color, background 200ms ease-in-out;
     display: inline-block;
     padding: 10px 20px;
-    background: #fff;
     min-width: 150px;
+    color: #95A3A4;
 
     &.router-link-exact-active {
-        background: #000;
-        color: #fff;
+        color: #000;
     }
 }
 .image-max-width {
