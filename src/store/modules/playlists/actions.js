@@ -1,6 +1,10 @@
 import axios from 'axios'
 
-export const getPlaylists = ({ commit }, page = 1) => {
+export const getPlaylists = ({ commit, state }, page = 1) => {
+  // Check for playlists in the state before making a request
+  if (state.playlists.length > 0) {
+    return state.playlists
+  }
   commit('setError', null)
   commit('setLoading', true)
   return axios.get(`${process.env.API_URL}/playlists?page=${page}`)
@@ -18,7 +22,7 @@ export const getPlaylists = ({ commit }, page = 1) => {
     })
 }
 
-export const getMorePlaylists = ({ commit, state }, page = 1) => {
+export const getMorePlaylists = ({ commit, state }) => {
   commit('setError', null)
   commit('setLoading', true)
   return axios.get(`${process.env.API_URL}/playlists?page=${state.page.current + 1}`)
